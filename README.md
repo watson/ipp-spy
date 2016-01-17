@@ -27,8 +27,16 @@ var opts = {
   forwardPort: 631            // default to 631
 }
 
-spy(opts, function (operation) {
-  console.log(operation)
+spy(opts, function (operation, document) {
+  console.log('New IPP operation:', operation)
+
+  var bytes = 0
+  document.on('data', function (chunk) {
+    bytes += chunk.length
+  })
+  document.on('end', function () {
+    console.log('Attached document size: %d bytes', bytes)
+  })
 })
 ```
 
