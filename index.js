@@ -15,7 +15,7 @@ module.exports = function (opts, onoperation) {
   var spy = tcpSpy(opts)
   if (onoperation) spy.on('operation', onoperation)
 
-  var getHttpSever = thunky(function (cb) {
+  var getHttpServer = thunky(function (cb) {
     var server = http.createServer(function (req, res) {
       var body
 
@@ -50,7 +50,7 @@ module.exports = function (opts, onoperation) {
     })
   })
 
-  getHttpSever(function (err, httpServer) {
+  getHttpServer(function (err, httpServer) {
     if (err) return spy.emit('error', err)
 
     spy.on('connection', function (source) {
