@@ -88,8 +88,6 @@ The callback is called with two arguments:
 - `document` - a readable stream containing the body of the IPP request
   (i.e. the document being printed)
 
-Note that as opposed to the ipp-encoder documentation, the 
-
 ## License
 
 MIT
