@@ -36,7 +36,14 @@ module.exports = function (opts, onoperation) {
         req.removeListener('data', consumeAttrGroups)
 
         debug('IPP operation %d detected', operation.operationId)
+
         var stream = new PassThrough()
+
+        // partial body remains after headers have been read
+        if (ipp.request.decode.bytes < body.length) {
+          stream.write(body.slice(ipp.request.decode.bytes))
+        }
+
         pump(req, stream)
         spy.emit('operation', operation, stream)
       }

@@ -62,8 +62,9 @@ test(function (t) {
         })
       })
     })
-    req.write(data)
-    req.end(new Buffer('foobar'))
+
+    // send everything in one write to complicate seperation of header and body
+    req.end(Buffer.concat([data, new Buffer('foobar')]))
   })
 })
 
