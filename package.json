@@ -1,6 +1,6 @@
 {
   "name": "ipp-spy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A proxy module for intercepting IPP communication",
   "main": "index.js",
   "dependencies": {
@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/watson/ipp-spy#readme",
   "coordinates": [
-    37.7800811,
-    -122.3924269
+    55.66658930000001,
+    12.5799719
   ]
 }
