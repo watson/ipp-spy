@@ -22,7 +22,7 @@ Start an IPP printer spy on port 3000 and proxy all requests to
 var spy = require('ipp-spy')
 
 var opts = {
-  port: 3000
+  port: 3000,
   forwardHost: 'example.com', // defaults to localhost
   forwardPort: 631            // default to 631
 }
